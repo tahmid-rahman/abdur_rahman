@@ -39,7 +39,10 @@
       }
 
       body {
-        background: var(--bg);
+        background:
+          radial-gradient(circle at 18% 8%, rgba(34, 211, 238, 0.12), transparent 28rem),
+          radial-gradient(circle at 88% 18%, rgba(167, 139, 250, 0.1), transparent 26rem),
+          linear-gradient(180deg, #050813 0%, #08101c 46%, #060912 100%);
         color: var(--text);
         font-family: Inter, sans-serif;
         overflow-x: hidden;
@@ -114,6 +117,326 @@
 
       .section-fade {
         animation: fadeUp 0.6s ease forwards;
+      }
+
+      #root {
+        position: relative;
+        z-index: 1;
+      }
+
+      section[id] {
+        scroll-margin-top: 6rem;
+      }
+
+      .hero-shell {
+        width: 100%;
+      }
+
+      .hero-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.45rem 0.7rem;
+        border: 1px solid rgba(34, 211, 238, 0.16);
+        border-radius: 8px;
+        background: rgba(15, 23, 42, 0.52);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      }
+
+      .hero-copy {
+        border-left: 2px solid rgba(34, 211, 238, 0.28);
+        padding-left: 1rem;
+      }
+
+      .hero-actions a {
+        min-height: 2.75rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .section-card {
+        background: linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(12, 17, 32, 0.96)) !important;
+        border-color: rgba(34, 211, 238, 0.13) !important;
+        border-radius: 8px !important;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+      }
+
+      .project-card {
+        border-radius: 8px !important;
+        background:
+          linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(12, 17, 32, 0.98)),
+          radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.14), transparent 18rem) !important;
+        box-shadow: 0 20px 54px rgba(0, 0, 0, 0.18);
+      }
+
+      .project-card h3,
+      .section-card h3,
+      .certificate-card h3 {
+        overflow-wrap: anywhere;
+      }
+
+      .recruiter-note {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 1rem 0 2.1rem;
+      }
+
+      .recruiter-note span {
+        padding: 0.45rem 0.65rem;
+        border-radius: 8px;
+        color: #dbeafe;
+        background: rgba(34, 211, 238, 0.08);
+        border: 1px solid rgba(34, 211, 238, 0.13);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.68rem;
+      }
+
+      .site-nav {
+        gap: 1rem;
+      }
+
+      .site-nav-brand {
+        white-space: nowrap;
+      }
+
+      .site-nav-toggle {
+        display: none;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 8px;
+        border: 1px solid rgba(34, 211, 238, 0.18);
+        background: rgba(12, 17, 32, 0.9);
+        color: var(--text);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .site-nav-toggle span,
+      .site-nav-toggle span:before,
+      .site-nav-toggle span:after {
+        content: "";
+        display: block;
+        width: 1.05rem;
+        height: 2px;
+        border-radius: 999px;
+        background: currentColor;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+      }
+
+      .site-nav-toggle span {
+        position: relative;
+      }
+
+      .site-nav-toggle span:before,
+      .site-nav-toggle span:after {
+        position: absolute;
+        left: 0;
+      }
+
+      .site-nav-toggle span:before {
+        top: -6px;
+      }
+
+      .site-nav-toggle span:after {
+        top: 6px;
+      }
+
+      .site-nav-toggle.is-open span {
+        background: transparent;
+      }
+
+      .site-nav-toggle.is-open span:before {
+        transform: translateY(6px) rotate(45deg);
+      }
+
+      .site-nav-toggle.is-open span:after {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+
+      .site-nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+      }
+
+      .site-nav-link {
+        position: relative;
+        padding: 0.2rem 0;
+        white-space: nowrap;
+      }
+
+      .site-nav-link:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -0.35rem;
+        height: 1px;
+        background: linear-gradient(90deg, #22d3ee, #a78bfa);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.25s ease;
+      }
+
+      .site-nav-link:hover:after {
+        transform: scaleX(1);
+      }
+
+      .certificate-card {
+        min-width: 0;
+        position: relative;
+        box-shadow: 0 18px 46px rgba(0, 0, 0, 0.22);
+      }
+
+      .certificate-image {
+        width: 100%;
+        aspect-ratio: 16 / 10.8;
+        object-fit: contain;
+        display: block;
+        background: #f8fafc;
+        padding: 0.45rem;
+      }
+
+      .certificate-media {
+        display: block;
+        background: linear-gradient(135deg, rgba(34, 211, 238, 0.16), rgba(167, 139, 250, 0.12));
+        padding: 0.55rem;
+        text-decoration: none;
+      }
+
+      .certificate-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.9rem;
+        padding: 0.55rem 0.8rem;
+        border-radius: 8px;
+        border: 1px solid rgba(34, 211, 238, 0.18);
+        color: #f1f5f9;
+        text-decoration: none;
+        font-size: 0.7rem;
+        font-family: "JetBrains Mono", monospace;
+        background: rgba(15, 23, 42, 0.72);
+        transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+      }
+
+      .certificate-action:hover {
+        border-color: rgba(34, 211, 238, 0.42);
+        background: rgba(34, 211, 238, 0.1);
+        transform: translateY(-1px);
+      }
+
+      @media (max-width: 820px) {
+        .site-nav {
+          padding: 0.8rem 1rem !important;
+          align-items: center !important;
+        }
+
+        .site-nav-links {
+          gap: 0.65rem 1rem !important;
+          max-width: calc(100vw - 5rem);
+        }
+
+        .site-nav-link {
+          font-size: 0.68rem !important;
+          letter-spacing: 0.04em !important;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .site-nav {
+          flex-wrap: wrap;
+          background: rgba(6, 9, 18, 0.92) !important;
+          backdrop-filter: blur(20px) !important;
+          border-bottom: 1px solid rgba(34, 211, 238, 0.08) !important;
+        }
+
+        .site-nav-toggle {
+          display: inline-flex;
+        }
+
+        .site-nav-links {
+          width: 100%;
+          max-width: 100%;
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          justify-content: flex-start;
+          padding-top: 0;
+          transition: max-height 0.3s ease, opacity 0.2s ease, padding-top 0.3s ease;
+        }
+
+        .site-nav-links.is-open {
+          max-height: 14rem;
+          opacity: 1;
+          padding-top: 0.45rem;
+        }
+
+        .site-nav-link {
+          width: calc(50% - 0.5rem);
+          padding: 0.55rem 0.65rem !important;
+          border: 1px solid rgba(148, 163, 184, 0.12);
+          border-radius: 8px;
+          background: rgba(15, 23, 42, 0.52);
+        }
+
+        #about {
+          min-height: auto !important;
+          padding: 8.5rem 1rem 4.5rem !important;
+        }
+
+        #about > div:last-child {
+          padding-top: 0 !important;
+        }
+
+        #about [style*="width: 200px"] {
+          width: 150px !important;
+          height: 150px !important;
+        }
+
+        section[id] {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+
+        section[id] [style*="min-width: 300px"] {
+          min-width: 0 !important;
+          width: 100% !important;
+        }
+
+        section[id] [style*="grid-template-columns"] {
+          grid-template-columns: 1fr !important;
+        }
+
+        section[id] [style*="padding: 2rem"],
+        section[id] [style*="padding: 1.8rem"],
+        section[id] [style*="padding: 1.5rem 2rem"] {
+          padding: 1.15rem !important;
+        }
+
+        h1 {
+          overflow-wrap: anywhere;
+        }
+
+        .hero-copy {
+          border-left: 0;
+          padding-left: 0;
+        }
+
+        .certificate-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .site-nav-link {
+          width: 100%;
+        }
       }
     </style>
   </head>
@@ -20201,7 +20524,7 @@ Error generating stack: ` +
             desc: "High-quality modular recognition system using MediaPipe Holistic for hand/face/body landmark extraction, paired with a custom Spatio-Temporal Graph Former (STGFormer) architecture for state-of-the-art sign classification accuracy.",
             tech: ["PyTorch", "MediaPipe", "STGFormer", "OpenCV", "Python", "NLP"],
             icon: "🤟",
-            award: "📄 Published Research Paper",
+            award: "📄 Paper",
           },
           {
             title: "Green Conscience AI",
@@ -20211,7 +20534,7 @@ Error generating stack: ` +
             desc: "Unified framework embedding energy-aware optimization, ethical fairness, and transparent auditability into ML workflows. Key findings: Fairness–Energy Synergy, Proxy-Based Acceleration, Model Transparency, Reproducible Governance.",
             tech: ["Python", "TensorFlow", "Fairness libs", "LaTeX"],
             icon: "🌿",
-            award: "📄 Published Research Paper",
+            award: "📄 Paper",
           },
           {
             title: "Flexirov",
@@ -20463,20 +20786,23 @@ Error generating stack: ` +
         );
       }
       function $F() {
-        const [t, e] = L.useState(!1);
+        const [t, e] = L.useState(!1),
+          [n, r] = L.useState(!1);
         L.useEffect(() => {
-          const r = () => e(window.scrollY > 60);
-          return (window.addEventListener("scroll", r), () => window.removeEventListener("scroll", r));
+          const i = () => e(window.scrollY > 60);
+          return (window.addEventListener("scroll", i), () => window.removeEventListener("scroll", i));
         }, []);
-        const n = [
+        const i = [
           ["About", "#about"],
           ["Skills", "#skills"],
           ["Projects", "#projects"],
           ["Research", "#research"],
           ["Achievements", "#achievements"],
+          ["Certificates", "#certificates"],
           ["Contact", "#contact"],
         ];
         return C.jsxs(re.nav, {
+          className: "site-nav",
           initial: { y: -70, opacity: 0 },
           animate: { y: 0, opacity: 1 },
           transition: { duration: 0.7, ease: "easeOut" },
@@ -20497,6 +20823,7 @@ Error generating stack: ` +
           },
           children: [
             C.jsx("span", {
+              className: "site-nav-brand",
               style: {
                 fontFamily: "Syne",
                 fontWeight: 800,
@@ -20507,13 +20834,23 @@ Error generating stack: ` +
               },
               children: "AR/",
             }),
+            C.jsx("button", {
+              className: `site-nav-toggle ${n ? "is-open" : ""}`,
+              type: "button",
+              "aria-label": "Toggle navigation",
+              "aria-expanded": n,
+              onClick: () => r((s) => !s),
+              children: C.jsx("span", {}),
+            }),
             C.jsx("div", {
-              style: { display: "flex", gap: "2rem" },
-              children: n.map(([r, i]) =>
+              className: `site-nav-links ${n ? "is-open" : ""}`,
+              children: i.map(([s, o]) =>
                 C.jsx(
                   re.a,
                   {
-                    href: i,
+                    className: "site-nav-link",
+                    href: o,
+                    onClick: () => r(!1),
                     whileHover: { color: "#22D3EE", y: -1 },
                     style: {
                       color: "#94A3B8",
@@ -20524,9 +20861,9 @@ Error generating stack: ` +
                       textTransform: "uppercase",
                       transition: "color 0.2s",
                     },
-                    children: r,
+                    children: s,
                   },
-                  r,
+                  s,
                 ),
               ),
             }),
@@ -20634,6 +20971,7 @@ Error generating stack: ` +
                 },
               }),
               C.jsxs("div", {
+                className: "hero-shell",
                 style: {
                   maxWidth: 1e3,
                   margin: "0 auto",
@@ -20656,6 +20994,7 @@ Error generating stack: ` +
                         style: { flex: 1, minWidth: 300 },
                         children: [
                           C.jsx(re.div, {
+                            className: "hero-kicker",
                             initial: { opacity: 0, y: 16 },
                             animate: { opacity: 1, y: 0 },
                             transition: { delay: 0.2 },
@@ -20666,7 +21005,7 @@ Error generating stack: ` +
                               letterSpacing: "0.12em",
                               marginBottom: "1.2rem",
                             },
-                            children: "> Hello World! — I'm",
+                            children: "> CSE Engineer · ML Researcher · Builder",
                           }),
                           C.jsxs(re.h1, {
                             initial: { opacity: 0, y: 24 },
@@ -20714,6 +21053,7 @@ Error generating stack: ` +
                             ],
                           }),
                           C.jsx(re.p, {
+                            className: "hero-copy",
                             initial: { opacity: 0, y: 14 },
                             animate: { opacity: 1, y: 0 },
                             transition: { delay: 0.65 },
@@ -20722,51 +21062,44 @@ Error generating stack: ` +
                               fontSize: "0.95rem",
                               lineHeight: 1.85,
                               maxWidth: 520,
-                              marginBottom: "2rem",
+                              marginBottom: "1.1rem",
                             },
                             children:
-                              "CSE graduate from United International University (2025) with a major in Data Science. I build things across the stack — from ML models and published research to embedded robotics and full-stack platforms. Champion at UIU CSE Project Show 2025.",
+                              "CSE graduate specializing in Data Science, full-stack engineering, applied machine learning, and robotics. I turn complex ideas into reliable products with clean architecture, practical research judgment, and user interfaces that feel ready for real people.",
+                          }),
+                          C.jsx(re.div, {
+                            className: "recruiter-note",
+                            initial: { opacity: 0, y: 14 },
+                            animate: { opacity: 1, y: 0 },
+                            transition: { delay: 0.72 },
+                            children: ["Product-minded engineer", "ML systems builder", "Robotics competition lead"].map(
+                              (i) => C.jsx("span", { children: i }, i),
+                            ),
                           }),
                           C.jsxs(re.div, {
+                            className: "hero-actions",
                             initial: { opacity: 0, y: 14 },
                             animate: { opacity: 1, y: 0 },
                             transition: { delay: 0.8 },
                             style: { display: "flex", gap: "0.9rem", flexWrap: "wrap", marginBottom: "2.5rem" },
                             children: [
                               C.jsx(re.a, {
-                                href: "#projects",
-                                whileHover: { scale: 1.04, boxShadow: "0 0 32px rgba(34,211,238,0.4)" },
+                                href: "mailto:artahmid123@gmail.com",
+                                whileHover: { scale: 1.04, boxShadow: "0 0 32px rgba(34,211,238,0.32)" },
                                 whileTap: { scale: 0.96 },
                                 style: {
                                   padding: "0.8rem 1.8rem",
-                                  background: "linear-gradient(135deg,#22D3EE,#06B6D4)",
+                                  border: "1.5px solid rgba(34,211,238,0.45)",
                                   borderRadius: 8,
                                   color: "#060912",
-                                  fontWeight: 700,
-                                  fontSize: "0.85rem",
-                                  textDecoration: "none",
-                                  fontFamily: "Syne",
-                                  letterSpacing: "0.02em",
-                                },
-                                children: "View Projects",
-                              }),
-                              C.jsx(re.a, {
-                                href: "mailto:artahmid123@gmail.com",
-                                whileHover: { scale: 1.04, borderColor: "#22D3EE", color: "#22D3EE" },
-                                whileTap: { scale: 0.96 },
-                                style: {
-                                  padding: "0.8rem 1.8rem",
-                                  border: "1.5px solid rgba(34,211,238,0.3)",
-                                  borderRadius: 8,
-                                  color: "#F1F5F9",
-                                  fontWeight: 600,
+                                  fontWeight: 800,
                                   fontSize: "0.85rem",
                                   textDecoration: "none",
                                   fontFamily: "Syne",
                                   transition: "all 0.25s",
-                                  background: "transparent",
+                                  background: "linear-gradient(135deg,#22D3EE,#10B981)",
                                 },
-                                children: "Get In Touch",
+                                children: "Contact Me",
                               }),
                             ],
                           }),
@@ -20779,53 +21112,6 @@ Error generating stack: ` +
                         children: C.jsx(HF, {}),
                       }),
                     ],
-                  }),
-                  C.jsx(re.div, {
-                    initial: { opacity: 0 },
-                    animate: { opacity: 1 },
-                    transition: { delay: 1.1 },
-                    style: {
-                      display: "flex",
-                      gap: "2.5rem",
-                      paddingTop: "2rem",
-                      borderTop: "1px solid rgba(34,211,238,0.09)",
-                      flexWrap: "wrap",
-                    },
-                    children: [
-                      ["9", "Projects Built"],
-                      ["2", "Research Papers"],
-                      ["5", "Awards & Achievements"],
-                      ["4+", "Hardware Platforms"],
-                    ].map(([i, s]) =>
-                      C.jsxs(
-                        "div",
-                        {
-                          children: [
-                            C.jsx("div", {
-                              style: {
-                                fontFamily: "Syne",
-                                fontSize: "1.9rem",
-                                fontWeight: 800,
-                                color: "#22D3EE",
-                                lineHeight: 1,
-                              },
-                              children: i,
-                            }),
-                            C.jsx("div", {
-                              style: {
-                                fontSize: "0.72rem",
-                                color: "#475569",
-                                textTransform: "uppercase",
-                                letterSpacing: "0.1em",
-                                marginTop: "0.25rem",
-                              },
-                              children: s,
-                            }),
-                          ],
-                        },
-                        s,
-                      ),
-                    ),
                   }),
                 ],
               }),
@@ -20884,7 +21170,7 @@ Error generating stack: ` +
                   marginBottom: "3rem",
                   letterSpacing: "-0.025em",
                 },
-                children: "Full-Spectrum Skill Set",
+                children: "Engineering Toolkit",
               }),
               C.jsx("div", {
                 style: { display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", gap: "1rem" },
@@ -20892,6 +21178,7 @@ Error generating stack: ` +
                   C.jsxs(
                     re.div,
                     {
+                      className: "section-card",
                       initial: { opacity: 0, y: 28 },
                       animate: e ? { opacity: 1, y: 0 } : {},
                       transition: { delay: r * 0.07, duration: 0.5 },
@@ -20958,7 +21245,8 @@ Error generating stack: ` +
       function XF({ p: t, i: e }) {
         const [n, r] = Bi("-40px"),
           [i, s] = L.useState(!1);
-        return C.jsxs(re.div, {
+          return C.jsxs(re.div, {
+          className: "project-card",
           ref: n,
           initial: { opacity: 0, y: 40 },
           animate: r ? { opacity: 1, y: 0 } : {},
@@ -21089,7 +21377,7 @@ Error generating stack: ` +
                   marginBottom: "3rem",
                   letterSpacing: "-0.025em",
                 },
-                children: "What I've Built",
+                children: "Selected Engineering Work",
               }),
               C.jsx("div", {
                 style: {
@@ -21171,7 +21459,7 @@ Error generating stack: ` +
                   marginBottom: "3rem",
                   letterSpacing: "-0.025em",
                 },
-                children: "Published Papers",
+                children: "Papers",
               }),
               C.jsx("div", {
                 style: { display: "flex", flexDirection: "column", gap: "1.5rem" },
@@ -21179,6 +21467,7 @@ Error generating stack: ` +
                   C.jsxs(
                     re.div,
                     {
+                      className: "section-card",
                       initial: { opacity: 0, x: -30 },
                       animate: e ? { opacity: 1, x: 0 } : {},
                       transition: { delay: i * 0.15, duration: 0.55 },
@@ -21299,7 +21588,7 @@ Error generating stack: ` +
                   marginBottom: "3rem",
                   letterSpacing: "-0.025em",
                 },
-                children: "Competitions & Achievements",
+                children: "Competition Highlights",
               }),
               C.jsx("div", {
                 style: { display: "flex", flexDirection: "column", gap: "1rem" },
@@ -21307,6 +21596,7 @@ Error generating stack: ` +
                   C.jsxs(
                     re.div,
                     {
+                      className: "section-card",
                       initial: { opacity: 0, x: -24 },
                       animate: e ? { opacity: 1, x: 0 } : {},
                       transition: { delay: r * 0.1, duration: 0.5 },
@@ -21394,6 +21684,7 @@ Error generating stack: ` +
                   C.jsxs(
                     re.div,
                     {
+                      className: "section-card",
                       initial: { opacity: 0, y: 20 },
                       animate: e ? { opacity: 1, y: 0 } : {},
                       transition: { delay: r * 0.12, duration: 0.5 },
@@ -21469,12 +21760,42 @@ Error generating stack: ` +
       function ZF() {
         const [t, e] = Bi(),
           n = [
-            { title: "Add Your Certificate", org: "Platform / Issuer", date: "Year", color: "#22D3EE", icon: "🏅" },
-            { title: "Add Your Certificate", org: "Platform / Issuer", date: "Year", color: "#A78BFA", icon: "🎖" },
-            { title: "Add Your Certificate", org: "Platform / Issuer", date: "Year", color: "#10B981", icon: "📜" },
+            {
+              title: "Champion — CSE Project Show",
+              org: "United International University",
+              date: "Summer 2025",
+              desc: "Champion award in the Software Engineering Lab category.",
+              color: "#F59E0B",
+              image: "images/20260630_213224.jpg",
+            },
+            {
+              title: "Runners-Up — Line Following Robot",
+              org: "UIU EEE Day 2025",
+              date: "Nov 2025",
+              desc: "Runners-up team in the Line Following Robot competition.",
+              color: "#22D3EE",
+              image: "images/20260630_213341.jpg",
+            },
+            {
+              title: "Participation — Line Following Robot",
+              org: "UIU EEE Day 2025",
+              date: "Nov 2025",
+              desc: "Active participation in the Line Following Robot event.",
+              color: "#A78BFA",
+              image: "images/20260630_213434.jpg",
+            },
+            {
+              title: "Participation — UIU CSE Fest LFR",
+              org: "UIU CSE Fest 2025",
+              date: "Jan 2025",
+              desc: "Certificate of participation for UIU CSE Fest 2025 Line Following Robot.",
+              color: "#10B981",
+              image: "images/lfr_certificate.jpeg",
+            },
           ];
         return C.jsx("section", {
-          style: { padding: "0 2.5rem 7rem" },
+          id: "certificates",
+          style: { padding: "0 clamp(1rem,4vw,2.5rem) 7rem" },
           ref: t,
           children: C.jsxs("div", {
             style: { maxWidth: 1100, margin: "0 auto" },
@@ -21497,42 +21818,55 @@ Error generating stack: ` +
                 initial: { opacity: 0 },
                 animate: e ? { opacity: 1 } : {},
                 transition: { delay: 0.2 },
-                style: { color: "#475569", fontSize: "0.82rem", fontFamily: "JetBrains Mono", marginBottom: "2.5rem" },
-                children: "// Replace the placeholders below with your actual certificates",
+                style: { color: "#94A3B8", fontSize: "0.82rem", fontFamily: "JetBrains Mono", marginBottom: "2.5rem" },
+                children: "",
               }),
               C.jsx("div", {
-                style: { display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))", gap: "1.2rem" },
+                className: "certificate-grid",
+                style: { display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: "1.2rem" },
                 children: n.map((r, i) =>
                   C.jsxs(
                     re.div,
                     {
+                      className: "certificate-card",
                       initial: { opacity: 0, y: 24 },
                       animate: e ? { opacity: 1, y: 0 } : {},
                       transition: { delay: i * 0.1, duration: 0.5 },
                       whileHover: { borderColor: `${r.color}40`, y: -4, boxShadow: `0 16px 40px ${r.color}0F` },
                       style: {
-                        background: "#0C1120",
-                        border: "1px solid rgba(34,211,238,0.1)",
-                        borderRadius: 14,
-                        padding: "1.5rem",
+                        background: "linear-gradient(180deg,rgba(17,24,39,0.98),rgba(12,17,32,0.98))",
+                        border: `1px solid ${r.color}26`,
+                        borderRadius: 8,
+                        overflow: "hidden",
                         display: "flex",
-                        gap: "1rem",
-                        alignItems: "flex-start",
+                        flexDirection: "column",
                         transition: "all 0.3s",
                         cursor: "default",
-                        borderStyle: "dashed",
-                        opacity: 0.6,
                       },
                       children: [
-                        C.jsx("span", { style: { fontSize: "1.6rem" }, children: r.icon }),
+                        C.jsx("a", {
+                          className: "certificate-media",
+                          href: r.image,
+                          target: "_blank",
+                          rel: "noreferrer",
+                          "aria-label": `Open ${r.title} certificate`,
+                          children: C.jsx("img", {
+                            className: "certificate-image",
+                            src: r.image,
+                            alt: r.title,
+                            loading: "lazy",
+                          }),
+                        }),
                         C.jsxs("div", {
+                          style: { padding: "1.1rem", minWidth: 0 },
                           children: [
                             C.jsx("h3", {
                               style: {
                                 fontFamily: "Syne",
-                                fontSize: "0.9rem",
+                                fontSize: "0.95rem",
                                 fontWeight: 700,
                                 marginBottom: "0.25rem",
+                                lineHeight: 1.25,
                               },
                               children: r.title,
                             }),
@@ -21546,8 +21880,19 @@ Error generating stack: ` +
                               children: r.org,
                             }),
                             C.jsx("div", {
-                              style: { fontFamily: "JetBrains Mono", fontSize: "0.63rem", color: "#475569" },
+                              style: { fontFamily: "JetBrains Mono", fontSize: "0.63rem", color: "#64748B", marginBottom: "0.65rem" },
                               children: r.date,
+                            }),
+                            C.jsx("p", {
+                              style: { color: "#94A3B8", fontSize: "0.82rem", lineHeight: 1.65 },
+                              children: r.desc,
+                            }),
+                            C.jsx("a", {
+                              className: "certificate-action",
+                              href: r.image,
+                              target: "_blank",
+                              rel: "noreferrer",
+                              children: "View certificate",
                             }),
                           ],
                         }),
